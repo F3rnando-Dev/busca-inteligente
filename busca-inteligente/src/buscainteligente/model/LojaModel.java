@@ -59,8 +59,6 @@ public class LojaModel {
         return "LojaModel{" + "codigo=" + codigo + ", descricao=" + descricao + ", tipo=" + tipo + ", cidade=" + cidade + '}';
     }
 
-    
-    
     public void setValues (ResultSet rs) throws SQLException{
         
         setCodigo(rs.getInt("CODI"));

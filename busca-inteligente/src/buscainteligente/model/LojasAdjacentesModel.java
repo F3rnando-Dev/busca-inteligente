@@ -4,6 +4,9 @@
  */
 package buscainteligente.model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author ferna
@@ -11,9 +14,9 @@ package buscainteligente.model;
 public class LojasAdjacentesModel {
     
     private int codigoDaLojaOrigem;
-    private String DescriçãoDaLojaOrigem;
+    private String DescricaoDaLojaOrigem;
     private int codigoDaLojaDestino;
-    private String DescriçãoDaLojaDestino;
+    private String DescricaoDaLojaDestino;
     private int distanciaEmMetroEntreLojas;
 
     public LojasAdjacentesModel() {
@@ -29,11 +32,11 @@ public class LojasAdjacentesModel {
     }
 
     public String getDescriçãoDaLojaOrigem() {
-        return DescriçãoDaLojaOrigem;
+        return DescricaoDaLojaOrigem;
     }
 
     public void setDescriçãoDaLojaOrigem(String DescriçãoDaLojaOrigem) {
-        this.DescriçãoDaLojaOrigem = DescriçãoDaLojaOrigem;
+        this.DescricaoDaLojaOrigem = DescriçãoDaLojaOrigem;
     }
 
     public int getCodigoDaLojaDestino() {
@@ -45,11 +48,11 @@ public class LojasAdjacentesModel {
     }
 
     public String getDescriçãoDaLojaDestino() {
-        return DescriçãoDaLojaDestino;
+        return DescricaoDaLojaDestino;
     }
 
     public void setDescriçãoDaLojaDestino(String DescriçãoDaLojaDestino) {
-        this.DescriçãoDaLojaDestino = DescriçãoDaLojaDestino;
+        this.DescricaoDaLojaDestino = DescriçãoDaLojaDestino;
     }
 
     public int getDistanciaEmMetroEntreLojas() {
@@ -62,8 +65,6 @@ public class LojasAdjacentesModel {
 
     @Override
     public String toString() {
-        return "LojasAdjacentesModel{" + "codigoDaLojaOrigem=" + codigoDaLojaOrigem + ", Descri\u00e7\u00e3oDaLojaOrigem=" + DescriçãoDaLojaOrigem + ", codigoDaLojaDestino=" + codigoDaLojaDestino + ", Descri\u00e7\u00e3oDaLojaDestino=" + DescriçãoDaLojaDestino + ", distanciaEmMetroEntreLojas=" + distanciaEmMetroEntreLojas + '}';
+        return "LojasAdjacentesModel{" + "codigoDaLojaOrigem=" + codigoDaLojaOrigem + ", DescricaoDaLojaOrigem=" + DescricaoDaLojaOrigem + ", codigoDaLojaDestino=" + codigoDaLojaDestino + ", DescricaoDaLojaDestino=" + DescricaoDaLojaDestino + ", distanciaEmMetroEntreLojas=" + distanciaEmMetroEntreLojas + '}';
     }
-
-    
 }
