@@ -24,12 +24,12 @@ public class LojasAdjacentesDao {
         return sql;
     }
     
-    public List<LojasAdjacentesModel> listasLojasAdjacentes() throws SQLException{
+    public ArrayList<LojasAdjacentesModel> listasLojasAdjacentes() throws SQLException{
         Connection conn = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         
-        List<LojasAdjacentesModel> listaDeLojasAdjacentes = new ArrayList<>();
+        ArrayList<LojasAdjacentesModel> listarLojasAdjacentes = new ArrayList<>();
         
         try {
             stmt = conn.prepareStatement(getSelectLojasAdjacentes());
@@ -38,13 +38,13 @@ public class LojasAdjacentesDao {
             while (rs.next()) {
                 LojasAdjacentesModel adjacentes = new LojasAdjacentesModel();
 
-                adjacentes.setCodigoDaLojaOrigem(rs.getInt(""));
-                adjacentes.setDescriçãoDaLojaOrigem(rs.getString(""));
-                adjacentes.setCodigoDaLojaDestino(rs.getInt(""));
-                adjacentes.setDescriçãoDaLojaDestino(rs.getString(""));
-                adjacentes.setDistanciaEmMetroEntreLojas(rs.getInt(""));
+                adjacentes.setCodigoDaLojaOrigem(rs.getInt("LOJA_ORIG"));
+                adjacentes.setDescriçãoDaLojaOrigem(rs.getString("DESC_LOJA_ORIG"));
+                adjacentes.setCodigoDaLojaDestino(rs.getInt("LOJA_DEST"));
+                adjacentes.setDescriçãoDaLojaDestino(rs.getString("DESC_LOJA_DEST"));
+                adjacentes.setDistanciaEmMetroEntreLojas(rs.getInt("DIST"));
                 
-                listaDeLojasAdjacentes.add(adjacentes);
+                listarLojasAdjacentes.add(adjacentes);
             }
         } catch (SQLException ex) {
             throw new SQLException(null, ex);
@@ -52,7 +52,7 @@ public class LojasAdjacentesDao {
             ConnectionFactory.closeConnection(conn, stmt, rs);
 
         }
-        return listaDeLojasAdjacentes;
+        return listarLojasAdjacentes;
     }
     
 }
