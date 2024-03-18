@@ -4,6 +4,9 @@
  */
 package buscainteligente.model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author ferna
@@ -12,8 +15,7 @@ public class LojaModel {
     
     private int codigo;
     private String descricao;
-    private long cnpj;
-    private String endereco;
+    private String tipo;
     private String cidade;
 
     public LojaModel(int codigo) {
@@ -36,20 +38,12 @@ public class LojaModel {
         this.descricao = descricao;
     }
 
-    public long getCnpj() {
-        return cnpj;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setCnpj(long cnpj) {
-        this.cnpj = cnpj;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getCidade() {
@@ -62,6 +56,16 @@ public class LojaModel {
 
     @Override
     public String toString() {
-        return "LojaModel{" + "codigo=" + codigo + ", descricao=" + descricao + ", cnpj=" + cnpj + ", endereco=" + endereco + ", cidade=" + cidade + '}';
+        return "LojaModel{" + "codigo=" + codigo + ", descricao=" + descricao + ", tipo=" + tipo + ", cidade=" + cidade + '}';
+    }
+
+    
+    
+    public void setValues (ResultSet rs) throws SQLException{
+        
+        setCodigo(rs.getInt("CODI"));
+        setDescricao(rs.getString("DESC"));
+        setTipo(rs.getString("TIPO"));
+        setCidade(rs.getString("CIDA"));
     }
 }
